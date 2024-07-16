@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path="/" /> {/* 👈 Renders at /app/ */}
+        <Route path="/"  />
       </Routes>
       <div className="App">
         <NavBar/>
