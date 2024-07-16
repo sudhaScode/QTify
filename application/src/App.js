@@ -1,11 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import NavBar from './components/navbar/NavBar';
+import Hero from "./components/hero/Hero"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-     <h1>Lets Build clean UI</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" /> {/* 👈 Renders at /app/ */}
+      </Routes>
+      <div className="App">
+        <NavBar/>
+        <Hero/>
+      </div>
+    </BrowserRouter>
   );
 }
 
