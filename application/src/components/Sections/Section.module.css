@@ -1,6 +1,7 @@
 .section{
-    margin:0 1rem;
+    margin:0 1.5rem;
     background-color: var(--color-black);
+    margin-bottom: 1.5rem;
 }
 .section-header{
     font-size: 20px !important;
@@ -15,4 +16,11 @@
     text-align: right;
     padding: 0 !important;
 
+}
+.album-grid{
+    margin: 1rem !important;
+}
+
+.tabs{
+    color: var(--color-white) !important;
 }

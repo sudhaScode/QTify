@@ -8,7 +8,7 @@ import {darkTheme, lightTheme} from './theme/Theme';
 import Section from './components/Sections/Section';
 
 export const config ={
-  endPoint:"https://qtify-backend-labs.crio.do/albums"
+  endPoint:"https://qtify-backend-labs.crio.do"
 }
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
       <div className="App" style={{backgroundColor: themeColors.backgroundColor, color: themeColors.textColor}}>
         <NavBar/>
         <Hero/>
-        <Section header={"Top Albums"}/>
+        <Section header={"Top Albums"} id="section1"/>
+        <Section header={"New Albums"} id="section2"/>
+        <Section header={"Songs"} hasTabFilter id="section3"/>
       </div>
     </BrowserRouter>
   );
