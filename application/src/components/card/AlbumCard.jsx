@@ -4,6 +4,7 @@ import Chip from "@mui/material/Chip";
 import styles from "./AlbumCard.module.css"
 
 function AlbumCard ({album}){
+    //console.log(album, "dwdeqeq")
 
     return (
         <Box sx={{position:"relative" }} className={styles["album-card"]}>
@@ -17,7 +18,7 @@ function AlbumCard ({album}){
                     <Typography variant="captio">{album.description}</Typography>
                 </Box> */}
                 <Chip
-                    label={`${album.follows} Follows`}
+                    label={album?.likes?`${album.likes} Likes`:`${album.follows} Follows`}
                     component="a"
                     href="#basic-chip"
                     clickable

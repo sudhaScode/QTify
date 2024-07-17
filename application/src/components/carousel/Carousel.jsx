@@ -34,16 +34,41 @@ const Carousel = ({ albums,id }) => {
     <div className={styles["carousel-container"]}>
     <Swiper
       onInit={onInit}
-      spaceBetween={130}
-      slidesPerView={7}
       navigation={{
         prevEl: `.${prevButtonClass}`,
         nextEl: `.${nextButtonClass}`,
       }}
       className="mySwiper"
+      breakpoints={{
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        // when window width is >= 640px
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 80
+        },
+        // when window width is >= 768px
+        799: {
+          slidesPerView: 5,
+          spaceBetween: 130
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 7,
+          spaceBetween: 180
+        },
+      }}
     >
       {albums.map((album) => (
-        <SwiperSlide key={album.id}>
+        <SwiperSlide key={album.id} className={styles["swiper-slide"]}>
           <AlbumCard album={album}  key={`${album.id}${album.id}`}/>
         </SwiperSlide>
       ))} 

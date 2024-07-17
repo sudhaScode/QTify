@@ -8,7 +8,7 @@ import CustomTabs from "./tabs/Tabs"
 
 
 function Section ({header, hasTabFilter, id}){
-   const [data, setData] = useState([]);
+   const [album, setAlbum] = useState([]);
    const [view, setView]= useState("Show all")
    const [genres, setGenres] = useState({})
 
@@ -28,7 +28,7 @@ function Section ({header, hasTabFilter, id}){
                 throw Error({status: response.status}) 
             }
             const data = await response.json();
-           // console.log(data)
+            console.log(data)
             addData(data)
             return
             
@@ -39,11 +39,11 @@ function Section ({header, hasTabFilter, id}){
     }
     const path = header.split(" ")[0].toLowerCase();
     if(hasTabFilter){
-        fetchAlbum(`${config.endPoint}/${path}`, setData)
+        fetchAlbum(`${config.endPoint}/${path}`, setAlbum)
         fetchAlbum(`${config.endPoint}/genres`, setGenres)
     }
     else{
-       fetchAlbum(`${config.endPoint}/albums/${path}`, setData)
+       fetchAlbum(`${config.endPoint}/albums/${path}`, setAlbum)
     } 
   },[])
     return (
@@ -56,10 +56,10 @@ function Section ({header, hasTabFilter, id}){
                 { hasTabFilter && <CustomTabs genres={genres}/>}
                 {view === "Collapse"?
                     <Grid container spacing={3.5}  >
-                        {data && data.map((album)=>(
+                        {album && album.map((album)=>(
                         <Grid item><AlbumCard  album = {album} key={album.id}/></Grid>
                         ))}
-                    </Grid>:<Carousel albums={data} id={id}/>}
+                    </Grid>:<Carousel albums={album} id={id}/>}
             </Box>
         </Box>
     )
