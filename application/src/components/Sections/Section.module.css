@@ -1,0 +1,18 @@
+.section{
+    margin:0 1rem;
+    background-color: var(--color-black);
+}
+.section-header{
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    
+}
+.section-collapse{
+    color: var(--color-primary) !important;
+    font-size: 20px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    text-align: right;
+    padding: 0 !important;
+
+}
