@@ -6,21 +6,21 @@ import styles from "./Tabs.module.css"
 import { styled } from '@mui/material/styles';
 
 
-function CustomTabs({genres}){
+function CustomTabs({genres, toggleTab}){
 
   const AntTabs = styled(Tabs)({
     '& .MuiTabs-indicator': {
       backgroundColor: '#34C94B',
       borderRadius: "10px",
       height: "4px",
-      marginBottom:"1rem",
+      marginBottom:"10px",
     },
   });
   
   const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
     textTransform: 'none',
     minWidth: 0,
-    marginBottom:"1rem",
+    marginBottom:"10px",
     [theme.breakpoints.up('sm')]: {
       minWidth: 0,
     },
@@ -51,15 +51,17 @@ function CustomTabs({genres}){
           'aria-controls': `simple-tabpanel-${index}`,
         };
       }
-
+   
 
     const handleChange = (event , newValue) => {
         setValue(newValue);
+       // console.log(event.target.innerText)
+        toggleTab(event.target.innerText)
       };
     return (
         <AntTabs value={value} onChange={handleChange} aria-label="genres" >
                 <AntTab label={"All"} {...a11yProps(genres.data?.length)} />    
-                { genres.data && genres.data.map((type,index)=>( <AntTab label={type.label} {...a11yProps(index)} />           
+                { genres.data && genres.data.map((type,index)=>( <AntTab label={type.label} {...a11yProps(index)} key={`${type.label}${index}`}/>           
                 ))}
         </AntTabs> 
     );

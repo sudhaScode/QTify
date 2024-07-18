@@ -13,15 +13,6 @@
     z-index: 1;
     transform: translateY(-50%);
 }
-.custom-prev-button button,
-.custom-next-button button{
-    background-color: transparent;
-    border: none;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
-}
 
 .custom-prev-button {
     left: -20px;

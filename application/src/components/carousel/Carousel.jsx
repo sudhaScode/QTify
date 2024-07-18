@@ -26,7 +26,7 @@ const Carousel = ({ albums,id }) => {
           }
         }, []);
     
-        const prevButtonClass = `custom-prev-button-${id}`;
+       const prevButtonClass = `custom-prev-button-${id}`;
        const nextButtonClass = `custom-next-button-${id}`;
 
 
@@ -40,30 +40,36 @@ const Carousel = ({ albums,id }) => {
       }}
       className="mySwiper"
       breakpoints={{
-        // when window width is >= 320px
-        320: {
+        // when window width is xs
+        200:{
           slidesPerView: 2,
-          spaceBetween: 10
+          spaceBetween: 100
         },
-        // when window width is >= 480px
+        // when window width is >= sm 480
         480: {
-          slidesPerView: 2,
-          spaceBetween: 40
-        },
-        // when window width is >= 640px
-        576: {
           slidesPerView: 3,
-          spaceBetween: 80
+          spaceBetween: 100
         },
-        // when window width is >= 768px
-        799: {
+        //sub
+        650: {
+          slidesPerView: 4,
+          spaceBetween: 100
+        },
+        // when window width is >= md 
+        768: {
           slidesPerView: 5,
-          spaceBetween: 130
+          spaceBetween: 100
         },
-        // when window width is >= 1024px
-        1024: {
+
+         // when window width is >= lg 
+         992: {
+          slidesPerView: 6,
+          spaceBetween: 100
+        },
+        // when window width is >= xl
+        1200: {
           slidesPerView: 7,
-          spaceBetween: 180
+          spaceBetween: 100
         },
       }}
     >

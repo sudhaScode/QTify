@@ -25,6 +25,7 @@ function App() {
         <Hero/>
         <Section header={"Top Albums"} id="section1"/>
         <Section header={"New Albums"} id="section2"/>
+        <div className='devider'></div>
         <Section header={"Songs"} hasTabFilter id="section3"/>
       </div>
     </BrowserRouter>
