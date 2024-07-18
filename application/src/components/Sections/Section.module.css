@@ -6,7 +6,8 @@
 .section-header{
     font-size: 20px !important;
     font-weight: 600 !important;
-    
+    height: 30px;
+    width: 122px;    
 }
 .section-collapse{
     color: var(--color-primary) !important;
@@ -18,5 +19,5 @@
 
 }
 .album-grid{
-    margin: 3px 1rem!important;
+    margin: 3px!important;
 }
